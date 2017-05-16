@@ -1,0 +1,10 @@
+body {
+	font-family: "Open Sans", Arial, sans-serif;
+	font-size: 1.25em;
+	text-align: center;
+	padding: 20px;
+}
+
+.error, .error a:active, .error a:visited, .error a:link {
+	color: red;
+}
