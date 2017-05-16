@@ -26,7 +26,19 @@ class App extends Model_Base {
             
         }
         $controller = 'Controller_'.$controller;
-        
+        try {
+            
+            //TODO: This needs to be improved
+            if (class_exists($controller, true)) {
+                
+            }
+        } catch (Exception $e) {
+            $action = 'index';
+            $controller = 'Controller_Http_Error';
+            $controllerClass = $controller::getInstance();
+            $controllerClass->$action(404, 'Page not found.');            
+            return;
+        }
         try {
             
             $controllerClass = $controller::getInstance();
@@ -36,7 +48,7 @@ class App extends Model_Base {
             $action = 'index';        
             $controller = 'Controller_Http_Error';
             $controllerClass = $controller::getInstance();
-            $controllerClass->$action(404, 'Page not found.');
+            $controllerClass->$action(500, $e->getMessage());
             
         }
 
