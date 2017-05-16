@@ -36,7 +36,7 @@ class App extends Model_Base {
             $action = 'index';        
             $controller = 'Controller_Http_Error';
             $controllerClass = $controller::getInstance();
-            $controllerClass->$action(500, $e->getMessage());
+            $controllerClass->$action(404, 'Page not found.');
             
         }
 
