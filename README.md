@@ -15,8 +15,8 @@ A simle parser for placeholders in the style of {{placeholder}} has been impleme
 
 
 ## Technical Requirements
-Apache / Nginx Webserver
-PHP >= 5.4
+- Apache / Nginx Webserver
+- PHP >= 5.4
 
 ## External Libraries / Dependencies
 None
