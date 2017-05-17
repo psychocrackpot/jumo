@@ -11,7 +11,14 @@ The model is then validates and added to a collection of loans.
 Once all models have been created from csv data, we can aggregate and format the output.csv.
 
 Rudimentary handling of errors via static html files.
-A simle parser for placeholders in the style of {{placeholder}} has been implemented for dynamic variables and template injection.
+A simple parser for placeholders in the style of {{placeholder}} has been implemented for dynamic variables and template injection.
+
+## Performance
+Temporary uploads are not saved to application directories, and rather parsed immediately (initially planned to save copies in var/uploads but the trade-off in disk IO affected scalibility).
+Use of Singletons where possible to limit memory consumption.
+Strict validation of rows in input data to prevent unneccessary parsing and calculations.
+Throwing of raw PHP Exceptions and a single point of error handling within the main App model to prevent excessive data type validation and additional code within classes. 
+
 
 
 ## Technical Requirements
